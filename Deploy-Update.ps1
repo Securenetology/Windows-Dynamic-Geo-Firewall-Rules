@@ -13,11 +13,9 @@
 # Argentina
 # Brazil
 # Belarus
-# Crimea
 # Central African Republic
 # China
 # Czech Republic
-# Denmark
 # Dominican Republic
 # Estonia
 # French Guiana
@@ -28,14 +26,12 @@
 # Kyrgyzstan
 # Korea Democratic Peoples Republic Of
 # Korea Republic Of
-# Luhansk
 # Libyan Arab Jamahiriya
 # French Polynesia
 # Pakistan
 # Qatar
 # Russia
 # Singapore
-# French Southern Territories
 # Turkey
 # Taiwan ROC
 # Ukraine
@@ -110,10 +106,6 @@ $BR4  = "https://www.ipdeny.com/ipblocks/data/countries/br.zone"
 
 $BY4  = "https://www.ipdeny.com/ipblocks/data/countries/by.zone"
 
-# Define Crimea IPv4 list source
-
-$CE4  = "https://www.ipdeny.com/ipblocks/data/countries/ce.zone"
-
 # Define Central African Republic IPv4 list source
 
 $CF4  = "https://www.ipdeny.com/ipblocks/data/countries/cf.zone"
@@ -125,10 +117,6 @@ $CN4  = "https://www.ipdeny.com/ipblocks/data/countries/cn.zone"
 # Define Czech Republic IPv4 list source
 
 $CZ4  = "https://www.ipdeny.com/ipblocks/data/countries/cz.zone"
-
-# Define Denmark IPv4 list source
-
-$DN4  = "https://www.ipdeny.com/ipblocks/data/countries/dn.zone"
 
 # Define Dominican Republic IPv4 list source
 
@@ -170,10 +158,6 @@ $KP4  = "https://www.ipdeny.com/ipblocks/data/countries/kp.zone"
 
 $KR4  = "https://www.ipdeny.com/ipblocks/data/countries/kr.zone"
 
-# Define Luhansk IPv4 list source
-
-$LN4  = "https://www.ipdeny.com/ipblocks/data/countries/ln.zone"
-
 # Define Libyan Arab Jamahiriya IPv4 list source
 
 $LY4  = "https://www.ipdeny.com/ipblocks/data/countries/ly.zone"
@@ -197,10 +181,6 @@ $RU4  = "https://www.ipdeny.com/ipblocks/data/countries/ru.zone"
 # Define Singapore IPv4 list source
 
 $SG4  = "https://www.ipdeny.com/ipblocks/data/countries/sg.zone"
-
-# Define French Southern Territories IPv4 list source
-
-$TF4  = "https://www.ipdeny.com/ipblocks/data/countries/tf.zone"
 
 # Define Turkey IPv4 list source
 
@@ -236,14 +216,6 @@ $AE6 = "https://www.ipdeny.com/ipv6/ipaddresses/blocks/ae.zone"
 
 $AF6 = "https://www.ipdeny.com/ipv6/ipaddresses/blocks/af.zone"
 
-# Define Asia/Pacific Region IPv6 list source
-
-$AP6 = "https://www.ipdeny.com/ipv6/ipaddresses/blocks/ap.zone"
-
-# Define Antarctica IPv6 list source
-
-$AQ6 = "https://www.ipdeny.com/ipv6/ipaddresses/blocks/aq.zone"
-
 # Define Argentina IPv6 list source
 
 $AR6 = "https://www.ipdeny.com/ipv6/ipaddresses/blocks/ar.zone"
@@ -256,14 +228,6 @@ $BR6  = "https://www.ipdeny.com/ipv6/ipaddresses/blocks/br.zone"
 
 $BY6  = "https://www.ipdeny.com/ipv6/ipaddresses/blocks/by.zone"
 
-# Define Crimea IPv6 list source
-
-$CE6  = "https://www.ipdeny.com/ipv6/ipaddresses/blocks/ce.zone"
-
-# Define Central African Republic IPv6 list source
-
-$CF6  = "https://www.ipdeny.com/ipv6/ipaddresses/blocks/cf.zone"
-
 # Define China IPv6 list source
 
 $CN6  = "https://www.ipdeny.com/ipv6/ipaddresses/blocks/cn.zone"
@@ -271,10 +235,6 @@ $CN6  = "https://www.ipdeny.com/ipv6/ipaddresses/blocks/cn.zone"
 # Define Czech Republic IPv6 list source
 
 $CZ6  = "https://www.ipdeny.com/ipv6/ipaddresses/blocks/cz.zone"
-
-# Define Denmark IPv6 list source
-
-$DN6  = "https://www.ipdeny.com/ipv6/ipaddresses/blocks/dn.zone"
 
 # Define Dominican Republic IPv6 list source
 
@@ -308,17 +268,9 @@ $IR6  = "https://www.ipdeny.com/ipv6/ipaddresses/blocks/ir.zone"
 
 $KG6  = "https://www.ipdeny.com/ipv6/ipaddresses/blocks/kg.zone"
 
-# Define Korea Democratic Peoples Republic Of IPv6 list source
-
-$KP6  = "https://www.ipdeny.com/ipv6/ipaddresses/blocks/kp.zone"
-
 # Define Korea Republic Of IPv6 list source
 
 $KR6  = "https://www.ipdeny.com/ipv6/ipaddresses/blocks/kr.zone"
-
-# Define Luhansk IPv6 list source
-
-$LN6  = "https://www.ipdeny.com/ipv6/ipaddresses/blocks/ln.zone"
 
 # Define Libyan Arab Jamahiriya IPv6 list source
 
@@ -343,10 +295,6 @@ $RU6  = "https://www.ipdeny.com/ipv6/ipaddresses/blocks/ru.zone"
 # Define Singapore IPv6 list source
 
 $SG6  = "https://www.ipdeny.com/ipv6/ipaddresses/blocks/sg.zone"
-
-# Define French Southern Territories IPv6 list source
-
-$TF6  = "https://www.ipdeny.com/ipv6/ipaddresses/blocks/tf.zone"
 
 # Define Turkey IPv6 list source
 
@@ -408,10 +356,6 @@ Invoke-WebRequest $BR4 -Outfile $Working\BR4.txt
 
 Invoke-WebRequest $BY4 -Outfile $Working\BY4.txt
 
-# Download Crimea IPv4 list
-
-Invoke-WebRequest $CE4 -Outfile $Working\CE4.txt
-
 # Download Central African Republic IPv4 list
 
 Invoke-WebRequest $CF4 -Outfile $Working\CF4.txt
@@ -423,10 +367,6 @@ Invoke-WebRequest $CN4 -Outfile $Working\CN4.txt
 # Download Czech Republic IPv4 list
 
 Invoke-WebRequest $CZ4 -Outfile $Working\CZ4.txt
-
-# Download Denmark IPv4 list
-
-Invoke-WebRequest $DN4 -Outfile $Working\DN4.txt
 
 # Download Dominican Republic IPv4 list
 
@@ -468,10 +408,6 @@ Invoke-WebRequest $KP4 -Outfile $Working\KP4.txt
 
 Invoke-WebRequest $KR4 -Outfile $Working\KR4.txt
 
-# Download Luhansk IPv4 list
-
-Invoke-WebRequest $LN4 -Outfile $Working\LN4.txt
-
 # Download Libyan Arab Jamahiriya IPv4 list
 
 Invoke-WebRequest $LY4 -Outfile $Working\LY4.txt
@@ -495,10 +431,6 @@ Invoke-WebRequest $RU4 -Outfile $Working\RU4.txt
 # Download Singapore IPv4 list
 
 Invoke-WebRequest $SG4 -Outfile $Working\SG4.txt
-
-# Download French Southern Territories IPv4 list
-
-Invoke-WebRequest $TF4 -Outfile $Working\TF4.txt
 
 # Download Turkey IPv4 list
 
@@ -534,14 +466,6 @@ Invoke-WebRequest $AE6 -Outfile $Working\AE6.txt
 
 Invoke-WebRequest $AF6 -Outfile $Working\AF6.txt
 
-# Download Asia/Pacific Region IPv6 list
-
-Invoke-WebRequest $AP6 -Outfile $Working\AP6.txt
-
-# Download Antarctica IPv6 list
-
-Invoke-WebRequest $AQ6 -Outfile $Working\AQ6.txt
-
 # Download Argentina IPv6 list
 
 Invoke-WebRequest $AR6 -Outfile $Working\AR6.txt
@@ -554,14 +478,6 @@ Invoke-WebRequest $BR6 -Outfile $Working\BR6.txt
 
 Invoke-WebRequest $BY6 -Outfile $Working\BY6.txt
 
-# Download Crimea IPv6 list
-
-Invoke-WebRequest $CE6 -Outfile $Working\CE6.txt
-
-# Download Central African Republic IPv6 list
-
-Invoke-WebRequest $CF6 -Outfile $Working\CF6.txt
-
 # Download China IPv6 list
 
 Invoke-WebRequest $CN6 -Outfile $Working\CN6.txt
@@ -569,10 +485,6 @@ Invoke-WebRequest $CN6 -Outfile $Working\CN6.txt
 # Download Czech Republic IPv6 list
 
 Invoke-WebRequest $CZ6 -Outfile $Working\CZ6.txt
-
-# Download Denmark IPv6 list
-
-Invoke-WebRequest $DN6 -Outfile $Working\DN6.txt
 
 # Download Dominican Republic IPv6 list
 
@@ -606,17 +518,9 @@ Invoke-WebRequest $IR6 -Outfile $Working\IR6.txt
 
 Invoke-WebRequest $KG6 -Outfile $Working\KG6.txt
 
-# Download Korea Democratic Peoples Republic Of IPv6 list
-
-Invoke-WebRequest $KP6 -Outfile $Working\KP6.txt
-
 # Download Korea Republic Of IPv6 list
 
 Invoke-WebRequest $KR6 -Outfile $Working\KR6.txt
-
-# Download Luhansk IPv6 list
-
-Invoke-WebRequest $LN6 -Outfile $Working\LN6.txt
 
 # Download Libyan Arab Jamahiriya IPv6 list
 
@@ -641,10 +545,6 @@ Invoke-WebRequest $RU6 -Outfile $Working\RU6.txt
 # Download Singapore IPv6 list
 
 Invoke-WebRequest $SG6 -Outfile $Working\SG6.txt
-
-# Download French Southern Territories IPv6 list
-
-Invoke-WebRequest $TF6 -Outfile $Working\TF6.txt
 
 # Download Turkey IPv6 list
 
