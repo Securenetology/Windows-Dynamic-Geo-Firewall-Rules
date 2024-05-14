@@ -609,7 +609,7 @@ Set-NetFireWallProfile -Profile Private -LogBlocked True -LogMaxSize 16384 -LogF
 
 # Enable Windows Firewall Logging - Public
 
-Set-NetFireWallProfile -Profile Public -LogBlocked True -LogMaxSize 16384 -LogFileName "%systemroot%\system32\LogFiles\Firewall\Private-Firewall.log"
+Set-NetFireWallProfile -Profile Public -LogBlocked True -LogMaxSize 16384 -LogFileName "%systemroot%\system32\LogFiles\Firewall\Public-Firewall.log"
 
 # Ensure Deploy-Update Exists for update tasks
 
