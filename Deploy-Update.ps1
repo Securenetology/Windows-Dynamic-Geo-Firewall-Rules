@@ -41,8 +41,13 @@
 # Author : Dax
 # Created : 04232024
 # Modified : 04262024 - Added Thirty Six Countires
+# Modified : 01042024 - Added Execution Policy
 
 # Begin
+
+# Set Execution Policy
+
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope LocalMachine -Confirm:$false
 
 # Create Folder if it does not exist
 
@@ -609,7 +614,7 @@ Set-NetFireWallProfile -Profile Private -LogBlocked True -LogMaxSize 16384 -LogF
 
 # Enable Windows Firewall Logging - Public
 
-Set-NetFireWallProfile -Profile Public -LogBlocked True -LogMaxSize 16384 -LogFileName "%systemroot%\system32\LogFiles\Firewall\Public-Firewall.log"
+Set-NetFireWallProfile -Profile Public -LogBlocked True -LogMaxSize 16384 -LogFileName "%systemroot%\system32\LogFiles\Firewall\Private-Firewall.log"
 
 # Ensure Deploy-Update Exists for update tasks
 
