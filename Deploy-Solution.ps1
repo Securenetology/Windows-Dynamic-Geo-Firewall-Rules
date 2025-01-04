@@ -8,6 +8,10 @@
 # Author : Dax
 # Created : 04232024
 
+# Set Execution Policy
+
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope LocalMachine -Confirm:$false
+
 # Deploy Script and Install
 
 # Define script source
