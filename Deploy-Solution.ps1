@@ -1,32 +1,52 @@
-# Deploy-Solution 
-# 
-# Description
-# < 
-# Used to deploy and update the Windows host based firewall solution which will block Russia (IPv4/IPv6), China(IPv4/IPv6), North Korea(IPv4), South Korea (IPv4/IPv6)
-# and content from exteranl intel sources such as TOR Exit IP Addresses, Bulletproof IP Addresses, High-Risk IP Addresses and Known Malicious IP Addresses.
-# >
-# Author : Dax
-# Created : 04232024
+<#
+.SYNOPSIS
+Deploys and updates the Windows host-based firewall solution to block traffic from high-risk geolocations and external threat intel sources.
 
-# Set Execution Policy
+.DESCRIPTION
+This script downloads and executes the latest deployment script from the Securenetology GitHub repository. It targets IPv4/IPv6 traffic from Russia, China, North Korea, South Korea, and known malicious sources (TOR, bulletproof hosts, etc.).
 
-Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope LocalMachine -Confirm:$false
+.AUTHOR
+Dax
 
-# Deploy Script and Install
+.CREATED
+2024-04-23
+#>
 
-# Define script source
-
-$PS = "https://github.com/Securenetology/Windows-Dynamic-Geo-Firewall-Rules/raw/main/Deploy-Update.ps1"
-
-# Download Script
-
-$filePath = "$path\Deploy-Update.ps1"
-
-# Check if the file exists
-if (-not (Test-Path -Path $filePath)) {
-    # The file does not exist, download it
-    Invoke-WebRequest $PS -OutFile $Working\Deploy-Update.ps1
-} else {
-    Write-Host "The file already exists."
+# Set execution policy (non-interactive)
+Try {
+    Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope LocalMachine -Confirm:$false -ErrorAction Stop
+} Catch {
+    Write-Warning "Failed to set execution policy: $_"
 }
 
+# Define working directory
+$WorkingDir = "$env:ProgramData\GeoFirewall"
+If (-not (Test-Path $WorkingDir)) {
+    New-Item -Path $WorkingDir -ItemType Directory -Force | Out-Null
+}
+
+# Define script source and destination
+$ScriptUrl = "https://github.com/Securenetology/Windows-Dynamic-Geo-Firewall-Rules/raw/main/Deploy-Update.ps1"
+$LocalScriptPath = Join-Path $WorkingDir "Deploy-Update.ps1"
+
+# Download the deployment script if not already present
+If (-not (Test-Path $LocalScriptPath)) {
+    Try {
+        Invoke-WebRequest -Uri $ScriptUrl -OutFile $LocalScriptPath -UseBasicParsing -ErrorAction Stop
+        Write-Host "Deployment script downloaded successfully to $LocalScriptPath"
+    } Catch {
+        Write-Error "Failed to download deployment script: $_"
+        Exit 1
+    }
+} Else {
+    Write-Host "Deployment script already exists at $LocalScriptPath"
+}
+
+# Execute the deployment script
+Try {
+    & $LocalScriptPath
+    Write-Host "Deployment script executed successfully."
+} Catch {
+    Write-Error "Failed to execute deployment script: $_"
+    Exit 1
+}
